@@ -64,18 +64,3 @@ repos:
     rev: v2.14.5
     hooks:
       - id: pylint
-
-  - repo: https://github.com/antonbabenko/pre-commit-terraform
-    rev: v1.74.1
-    hooks:
-      - id: terraform_fmt
-      - id: terraform_validate
-
-  - repo: local
-    hooks:
-      - id: gcpdiag-custom-rule
-        name: Check that there are required files for each lint rule
-        entry: ./bin/precommit-required-files-wrapper
-        language: script
-        files: ^gcpdiag/lint/[^/]+/(bp|warn|err|sec)_.*.py
-        exclude: .*_test.py

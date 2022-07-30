@@ -1,4 +1,0 @@
-{
-  "booleanPolicy": {},
-  "constraint": "constraints/compute.requireOsLogin"
-}
