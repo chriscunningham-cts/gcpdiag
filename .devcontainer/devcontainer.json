@@ -1,7 +1,7 @@
 {
     "name": "locust",
     "build": {
-        "dockerfile": "Dockerfile",
+        "dockerfile": "Dockerfile"
     },
     "extensions": [
         "ms-azuretools.vscode-docker",
@@ -12,6 +12,6 @@
         "ms-python.python",
         "sourcery.sourcery"
     ],
-    "postCreateCommand": "pre-commit install",
+    "postCreateCommand": "pre-commit install && poetry install",
     "remoteUser": "vscode"
 }
