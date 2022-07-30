@@ -1,1 +1,3 @@
-See: https://gcpdiag.dev/privacy
+# PRIVACY
+
+See: <https://gcpdiag.dev/privacy>

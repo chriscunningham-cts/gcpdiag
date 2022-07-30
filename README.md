@@ -13,7 +13,7 @@ an officially supported Google product, but a community effort. The Google Cloud
 Support team maintains this code and we do our best to avoid causing any
 problems in your projects, but we give no guarantees to that end.
 
-<img src="docs/gcpdiag-demo-2021-10-01.gif" alt="gcpdiag demo" width="800"/>
+! [gcpdiag demo](docs/gcpdiag-demo-2021-10-01.gif)
 
 ## Installation
 
@@ -21,7 +21,7 @@ You can run gcpdiag using a shell wrapper that starts gcpdiag in a Docker
 container. This should work on any machine with Docker or Podman installed,
 including Cloud Shell.
 
-```
+```sh
 curl https://gcpdiag.dev/gcpdiag.sh >gcpdiag
 chmod +x gcpdiag
 ./gcpdiag lint --project=MYPROJECT
@@ -32,7 +32,7 @@ chmod +x gcpdiag
 Currently gcpdiag mainly supports one subcommand: `lint`, which is used
 to run diagnostics on one or more GCP projects.
 
-```
+```console
 usage: gcpdiag lint --project P [OPTIONS]
 
 Run diagnostics in GCP projects.
@@ -132,8 +132,8 @@ to be present).
 
 ## Further Information
 
-See http://gcpdiag.dev for more information:
+See <http://gcpdiag.dev> for more information:
 
-- <a href="https://gcpdiag.dev/docs/">Documentation</a>
-- <a href="https://gcpdiag.dev/rules/">Lint rule descriptions</a>
-- <a href="https://gcpdiag.dev/docs/development/">Development guides</a>
+- [Documentation<](https://gcpdiag.dev/docs/)
+- [Lint rule descriptions](https://gcpdiag.dev/rules/)
+- [Development guides](https://gcpdiag.dev/docs/development/)

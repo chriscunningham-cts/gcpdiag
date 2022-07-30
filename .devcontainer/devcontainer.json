@@ -12,6 +12,35 @@
         "ms-python.python",
         "sourcery.sourcery"
     ],
+    "settings": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        },
+        "editor.formatOnSave": true,
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "files.insertFinalNewline": true,
+        "files.trimTrailingWhitespace": true,
+        "python.formatting.provider": "yapf",
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": true,
+        "python.linting.pylintPath": "pylint",
+        "python.linting.mypyEnabled": true,
+        "python.linting.mypyArgs": [
+            "--follow-imports=silent",
+            "--ignore-missing-imports",
+            "--show-column-numbers",
+            "--no-pretty",
+            "--scripts-are-modules"
+        ],
+        "python.terminal.activateEnvInCurrentTerminal": true,
+        "python.linting.pylintCategorySeverity.refactor": "Warning",
+        "python.testing.pytestArgs": [
+            "gcpdiag"
+        ],
+        "python.testing.unittestEnabled": false,
+        "python.testing.pytestEnabled": true
+    },
     "postCreateCommand": "pre-commit install && poetry install",
     "remoteUser": "vscode"
 }

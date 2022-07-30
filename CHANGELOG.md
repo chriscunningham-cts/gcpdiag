@@ -1,6 +1,8 @@
+# CHANGELOG
+
 ## 0.56 (2022-07-18)
 
-#### New rules
+## New rules
 
 - bigquery/ERR/2022\_001: BigQuery is not exceeding rate limits
 - bigquery/ERR/2022\_001: BigQuery jobs not failing due to concurrent DML updates on the same table
@@ -30,14 +32,14 @@
 - tpu/WARN/2022\_001: Cloud TPU resource availability
 - vpc/WARN/2022\_001: Cross Project Networking Service projects quota is not near the limit
 
-#### Updated rules
+Updated rules:
 
 - dataproc/ERR/2022\_002: fix os version detection (github #26)
 - gke/BP/2022\_003: update GKE EOL schedule
 - gke/ERR/2022\_001: fix KeyError exception
 - gke/BP/2022\_002: skip legacy VPC
 
-#### Enhancements
+Enhancements:
 
 - Add support for multiple output formats (--output=csv, --output=json)
 - Better handle CTRL-C signal
@@ -45,7 +47,7 @@
 - New product: CloudSQL
 - New product: VPC
 - Renamed product "GAES" to "GAE" (Google App Engine)
-- Publish internal API documentation on https://gcpdiag.dev/docs/development/api/
+- Publish internal API documentation on <https://gcpdiag.dev/docs/development/api/>
 - Update Python dependencies
 
 ## 0.55 (2022-04-25)
@@ -55,17 +57,17 @@ to facilitate the transition of binaries to another location.
 
 ## 0.54 (2022-04-25)
 
-#### New rules
+New rules:
 
 - apigee/ERR/2022_001: Apigee Service Agent permissions
 
-#### Enhancements
+Enhancements:
 
 - dynamically load gcpdiag lint rules for all products
 - support IAM policy retrieval for Artifact Registry
 - move gcpdiag release buckets to new location
 
-#### Fixes
+Fixes:
 
 - gke/ERR/2022_002: use correct network for shared VPC scenario (#24)
 - error out early if service accounts of inspected projects can't be retrieved
@@ -75,7 +77,7 @@ to facilitate the transition of binaries to another location.
 
 ## 0.53 (2022-03-30)
 
-#### New rules
+New rules:
 
 - composer/ERR/2022_001: Composer Service Agent permissions
 - composer/ERR/2022_002: Composer Environment Service Account permissions
@@ -88,21 +90,21 @@ to facilitate the transition of binaries to another location.
 - gke/WARN/2022_004: Cloud Logging API enabled when GKE logging is enabled
 - gke/WARN/2022_005: NVIDIA GPU device drivers are installed on GKE nodes with GPU
 
-#### Enhancements
+Enhancements:
 
 - Support IAM policies for service accounts and subnetworks
 - Skip rules using logs if Cloud Logging API is disabled
 - New option: --logs-query-timeout
 - Add support for configuration files
-  (see https://gcpdiag.dev/docs/usage/#configuration-file)
+  (see <https://gcpdiag.dev/docs/usage/#configuration-file>)
 
-#### Fixes
+Fixes:
 
 - Fix various unhandled exceptions
 
 ## 0.52 (2022-02-11)
 
-#### New rules
+New rules:
 
 - dataproc/BP/2022_001: Cloud Monitoring agent is enabled.
 - dataproc/ERR/2022_002: Dataproc is not using deprecated images.
@@ -111,19 +113,19 @@ to facilitate the transition of binaries to another location.
 - gke/ERR/2022_002: GKE nodes of private clusters can access Google APIs and services.
 - gke/ERR/2022_003: GKE connectivity: load balancer to node communication (ingress).
 
-#### Updated rules
+Updated rules:
 
 - gcb/ERR/2022_001: Fix false positive when no build is configured.
 - gke/WARN/2021_008: Improve Istio deprecation message
 
-#### Enhancements
+Enhancements:
 
 - Introduce "extended" rules (BP_EXT, ERR_EXT, etc.), disabled by default
   and which can be enabled with --include-extended.
 - Large IAM policy code refactorings in preparation for org-level IAM
   policy support.
 
-#### Fixes
+Fixes:
 
 - More API retry fixes.
 - Fix --billing-project which had no effect before.
@@ -131,13 +133,13 @@ to facilitate the transition of binaries to another location.
 
 ## 0.51 (2022-01-21)
 
-#### Fixes
+Fixes:
 
 - Update Python dependencies, and add 'packaging', missing in the docker image.
 
 ## 0.50 (2022-01-21)
 
-#### New rules
+New rules:
 
 - gcb/ERR/2022_001: The Cloud Build logs do not report permission issues
 - gce/BP/2021_002: GCE nodes have an up to date ops agent
@@ -153,18 +155,18 @@ to facilitate the transition of binaries to another location.
 - gke/WARN/2022_001: GKE clusters with workload identity are regional
 - gke/WARN/2022_002: GKE metadata concealment is not in use
 
-#### Updated rules
+Updated rules:
 
 - gcf/WARN/2021_001: add one more deprecated runtime Nodejs6 (github #17)
 
-#### Enhancements
+Enhancements:
 
 - New product: App Engine Standard
 - New product: Cloud Build
 - New product: Cloud Pub/Sub
 - New product: Cloud Storage
 
-#### Fixes
+Fixes:
 
 - Verify early that IAM API is enabled
 - Catch API errors in prefetch_rule
@@ -173,7 +175,7 @@ to facilitate the transition of binaries to another location.
 
 ## 0.49 (2021-12-20)
 
-#### New / updated rules
+New / updated rules:
 
 - dataproc/BP/2021_001: Dataproc Job driver logs are enabled
 - composer/WARN/2021_001: Composer environment status is running (b/207615409)
@@ -183,77 +185,76 @@ to facilitate the transition of binaries to another location.
 - gce/WARN/2021_001: verify logging access scopes (b/210711351)
 - gce/WARN/2021_003: verify monitoring access scopes (b/210711351)
 
-#### Enhancements
+Enhancements:
 
 - New product: Cloud Composer (b/207615409)
 - Simplify API testing by using ephemeral projects (b/207484323)
 - gcpdiag.sh wrapper script now verifies the minimum version of current script
 - Add support for client-side firewall connectivity tests (b/210407018)
 
-#### Fixes
+Fixes:
 
 ## 0.48 (2021-11-15)
 
-#### New rules
+New rules:
 
 - apigee/WARN/2021_001: Every env. group has at least one env. (b/193733957)
 - dataproc/WARN/2021_001: Dataproc cluster is in RUNNING state (b/204850980)
 
-#### Enhancements
+Enhancements:
 
 - Use OAuth authentication by default (b/195908593)
 - New product: Dataproc (b/204850980)
 - New product: Apigee (b/193733957)
 
-#### Fixes
+Fixes:
 
 - Fix GitHub actions with newest pipenv
 
 ## 0.47 (2021-11-01)
 
-#### New rules
+New rules:
 
 - gce/WARN/2021_004: check serial output for 'disk full' messages (b/193383069)
 
-#### Enhancements
+Enhancements:
 
 - Add podman support in wrapper script
 
-#### Fixes
+Fixes:
 
 - Fix gcf KeyError when API enabled but no functions defined (b/204516746)
 
 ## 0.46 (2021-10-27)
 
-#### New rules
+New rules:
 
 - gce/WARN/2021_003: gce service account monitoring permissions (b/199277342)
 - gcf/WARN/2021_001: cloud functions deprecated runtimes
 - gke/WARN/2021_009: deprecated node image types (b/202405661)
 
-#### Enhancements
+Enhancements:
 
-- New website! https://gcpdiag.dev
+- New website! <https://gcpdiag.dev>
 - Rule documentation permalinks added to lint output (b/191612825)
 - Added --include and --exclude arguments to filter rules to run (b/183490284)
 
-
 ## 0.45 (2021-10-08)
 
-#### Enhancements
+Enhancements:
 
 - Use --auth-adc by default for all non-google.com users (b/202488675)
 
 ## 0.44 (2021-10-07)
 
-#### New rules
+New rules:
 
 - gke/ERR/2021_009: gke cluster and node pool version skew (b/200559114)
 - gke/ERR/2021_010: clusters are not facing ILB quota issues (b/193382041)
 - gke/ERR/2021_011: ip-masq-agent errors (b/199480284)
 - iam/SEC/2021_001: no service account has owner role (b/201526416)
 
-#### Enhancements
+Enhancements:
 
 - Improve error message for --auth-adc authentication errors (b/202091830)
 - Suggest gcloud command if CRM API is not enabled
@@ -261,7 +262,7 @@ to facilitate the transition of binaries to another location.
 - Improve output with hidden items
 - Update docker image to python:3.9-slim
 
-#### Fixes
+Fixes:
 
 - Make the docker wrapper macos-compatible (GH-10)
 - Exclude fleet workload identities from SA disabled check (b/201631248)
