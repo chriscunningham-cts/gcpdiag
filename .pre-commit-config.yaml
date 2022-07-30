@@ -12,64 +12,70 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-exclude: '/snapshots/'
+exclude: "/snapshots/"
 repos:
-- repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v4.0.1
-  hooks:
-  - id: check-added-large-files
-  - id: check-ast
-  - id: check-case-conflict
-  - id: check-executables-have-shebangs
-  - id: check-merge-conflict
-  - id: check-toml
-  - id: check-vcs-permalinks
-  - id: check-yaml
-  - id: detect-private-key
-  - id: end-of-file-fixer
-  - id: mixed-line-ending
-  - id: trailing-whitespace
-    exclude: .bumpversion.cfg
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.3.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-ast
+      - id: check-case-conflict
+      - id: check-executables-have-shebangs
+      - id: check-merge-conflict
+      - id: check-toml
+      - id: check-vcs-permalinks
+      - id: check-yaml
+      - id: detect-private-key
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+      - id: trailing-whitespace
+        exclude: .bumpversion.cfg
 
-- repo: https://github.com/asottile/pyupgrade
-  rev: v2.29.0
-  hooks:
-  - id: pyupgrade
-    args: [--py36-plus]
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v2.37.3
+    hooks:
+      - id: pyupgrade
+        args: [--py36-plus]
 
-- repo: https://github.com/pre-commit/mirrors-mypy
-  rev: v0.812
-  hooks:
-  - id: mypy
-    exclude: bin/gcpdiag
-    args: ['--ignore-missing-imports', '--scripts-are-modules']
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v0.971
+    hooks:
+      - id: mypy
+        exclude: bin/gcpdiag
+        args:
+          - --ignore-missing-imports
+          - --scripts-are-modules
+          - --install-types
+          - --non-interactive
 
-- repo: https://github.com/timothycrosley/isort
-  rev: 5.9.3
-  hooks:
-  - id: isort
+  - repo: https://github.com/timothycrosley/isort
+    rev: 5.10.1
+    hooks:
+      - id: isort
 
-- repo: https://github.com/pre-commit/mirrors-yapf
-  rev: v0.31.0
-  hooks:
-  - id: yapf
+  - repo: https://github.com/pre-commit/mirrors-yapf
+    rev: v0.32.0
+    hooks:
+      - id: yapf
+        additional_dependencies:
+          - toml
 
-- repo: https://github.com/pycqa/pylint
-  rev: v2.11.1
-  hooks:
-  - id: pylint
+  - repo: https://github.com/pycqa/pylint
+    rev: v2.14.5
+    hooks:
+      - id: pylint
 
-- repo: https://github.com/antonbabenko/pre-commit-terraform
-  rev: v1.52.0
-  hooks:
-  - id: terraform_fmt
-  - id: terraform_validate
+  - repo: https://github.com/antonbabenko/pre-commit-terraform
+    rev: v1.74.1
+    hooks:
+      - id: terraform_fmt
+      - id: terraform_validate
 
-- repo: local
-  hooks:
-  - id: gcpdiag-custom-rule
-    name: Check that there are required files for each lint rule
-    entry: ./bin/precommit-required-files-wrapper
-    language: script
-    files: ^gcpdiag/lint/[^/]+/(bp|warn|err|sec)_.*.py
-    exclude: .*_test.py
+  - repo: local
+    hooks:
+      - id: gcpdiag-custom-rule
+        name: Check that there are required files for each lint rule
+        entry: ./bin/precommit-required-files-wrapper
+        language: script
+        files: ^gcpdiag/lint/[^/]+/(bp|warn|err|sec)_.*.py
+        exclude: .*_test.py
