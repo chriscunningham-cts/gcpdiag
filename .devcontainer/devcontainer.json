@@ -12,6 +12,6 @@
         "ms-python.python",
         "sourcery.sourcery"
     ],
-    "postCreateCommand": "pre-commit install && poetry install",
+    "postCreateCommand": "pre-commit install",
     "remoteUser": "vscode"
 }
